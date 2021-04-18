@@ -1,0 +1,21 @@
+@import 'common/styles/templates';
+
+.containerError {
+  background-color: pink;
+  max-width: 500px;
+  margin: 0 auto;
+  position: absolute;
+  padding: 8px 10px;
+  border-radius: 5px;
+  left: 68%;
+}
+
+.error {
+  color: red;
+  font-family: sans-serif;
+}
+
+.buttonDelete {
+  @extend %button;
+  margin-left: 15px;
+}

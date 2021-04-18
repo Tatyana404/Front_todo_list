@@ -1,0 +1,24 @@
+%input {
+  border: 2px solid pink;
+  background-color: white;
+  border-radius: 5px;
+  margin: 0 auto;
+  outline: none;
+  color: black;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+%flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+%button {
+  color: red;
+  background-color: #97bbe8;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}

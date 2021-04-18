@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+body{
+  background: radial-gradient(
+    circle,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(29, 180, 253, 1) 100%,
+    rgba(252, 176, 69, 1) 100%
+  );
+}

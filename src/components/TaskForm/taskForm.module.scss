@@ -1,0 +1,25 @@
+@import 'common/styles/templates';
+
+.inputTodo {
+  @extend %input;
+  margin-left: 15.7%;
+  padding: 10px 20px;
+  text-align: start;
+  margin-bottom: 20px;
+}
+
+.inputDeadline {
+  @extend %input;
+  padding: 0px 42px;
+  margin-bottom: 30px;
+}
+
+.button {
+  padding: 8px 10px;
+  margin-left: 20px;
+  border: 2px solid pink;
+  border-radius: 20px;
+  background-color: white;
+  color: #97bbe8;
+  outline: none;
+}
