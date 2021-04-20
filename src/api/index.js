@@ -8,7 +8,11 @@ const http = axios.create({
 
 export const createTask = ({ ...task } = {}) => http.post(`/tasks`, task);
 
-export const updateTask = ({ taskId, taskData } = {}) =>
+
+
+
+export const updateTask = ({ taskId, taskData }) =>
+
   http.patch(`/tasks/${taskId}`, taskData);
 
 export const getTasks = ({ page = 1, limit = 5 }) =>

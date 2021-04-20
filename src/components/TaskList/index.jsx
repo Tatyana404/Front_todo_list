@@ -29,6 +29,7 @@ const TaskList = () => {
     getTasksRequest(search);
   }, []);
 
+
   const taskItemsList =
     tasks.map(task => {
       return (<Task

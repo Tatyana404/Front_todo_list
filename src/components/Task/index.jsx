@@ -21,7 +21,11 @@ const Task = props => {
           <input
             type='checkbox'
             checked={isDone}
+<<<<<<< HEAD
             onChange={(e) => updateTaskRequest({id,taskData: {isDone: e.target.checked}})}
+=======
+            onChange={(i) => updateTaskRequest(i,id)}
+>>>>>>> c1bb4b7c8149528bf6d03952de18dc9b8a039e77
           />
           <p className={styles.taskBody}>{body}</p>
           <button
