@@ -1,7 +1,6 @@
 import produce from 'immer';
 import ACTION_TYPES from 'actions/types';
 
-
 const initialState = {
   tasks: [],
   isFetching: false,
@@ -34,11 +33,12 @@ const handlers = {
   }),
 
   [ACTION_TYPES.UPDATE_TASK_SUCCESS]: produce((draftState, action) => {
+    const { tasks } = draftState;
     const {
-      payload: { tasks },
+      payload: { task: newTask },
     } = action;
     const id = draftState.tasks.filter(task => task.id === tasks.id);
-    draftState.tasks[id] = tasks;
+    draftState.tasks[id].push(newTask);
   }),
 
   [ACTION_TYPES.DELETE_TASK_ERROR]: produce((draftState, action) => {

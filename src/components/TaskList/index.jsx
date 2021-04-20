@@ -27,7 +27,7 @@ const TaskList = () => {
 
   useEffect(() => {
     getTasksRequest(search);
-  }, [search]);
+  }, []);
 
   return (
     <section>
