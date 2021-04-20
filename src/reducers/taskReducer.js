@@ -1,7 +1,6 @@
 import produce from 'immer';
 import ACTION_TYPES from 'actions/types';
 
-
 const initialState = {
   tasks: [],
   isFetching: false,
@@ -35,13 +34,13 @@ const handlers = {
 
   [ACTION_TYPES.UPDATE_TASK_SUCCESS]: produce((draftState, action) => {
     const {
-      payload: { tasks },
+      payload: { taskData },
     } = action;
-    const id = draftState.tasks.filter(task => task.id === tasks.id);
-    draftState.tasks[id] = tasks;
+    const id = draftState.tasks.filter(task => task.id === taskData.id);
+    draftState.tasks[id] = { ...taskData };
   }),
 
-  [ACTION_TYPES.DELETE_TASK_ERROR]: produce((draftState, action) => {
+  [ACTION_TYPES.UPDATE_TASK_ERROR]: produce((draftState, action) => {
     const {
       payload: { error },
     } = action;
@@ -57,7 +56,7 @@ const handlers = {
     const {
       payload: { tasks },
     } = action;
-    draftState.tasks.push(...tasks);
+    draftState.tasks.unshift(...tasks);
   }),
 
   [ACTION_TYPES.GET_TASKS_ERROR]: produce((draftState, action) => {
@@ -80,7 +79,7 @@ const handlers = {
     draftState.tasks = draftState.tasks.filter(t => t.id !== Number(id));
   }),
 
-  [ACTION_TYPES.UPDATE_TASK_ERROR]: produce((draftState, action) => {
+  [ACTION_TYPES.DELETE_TASK_ERROR]: produce((draftState, action) => {
     const {
       payload: { error },
     } = action;

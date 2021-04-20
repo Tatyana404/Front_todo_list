@@ -8,7 +8,7 @@ import Error from 'components/Error/index';
 import Task from 'components/Task/index';
 
 const TaskList = () => {
-  const { tasks,  error } = useSelector(({ task }) => task);
+  const { tasks, error } = useSelector(({ task }) => task);
   const dispatch = useDispatch();
 
   const location = useLocation();
@@ -27,19 +27,22 @@ const TaskList = () => {
 
   useEffect(() => {
     getTasksRequest(search);
-  }, [search]);
+  }, []);
+
+  const taskItemsList =
+    tasks.map(task => {
+      return (<Task
+        key={task.id}
+        {...task}
+        deleteTaskRequest={deleteTaskRequest}
+        updateTaskRequest={updateTaskRequest}
+      />)
+    })
 
   return (
     <section>
       {error && <Error error={error} clearError={clearTaskError} />}
-      {tasks.map(task => (
-        <Task
-          key={task.id}
-          {...task}
-          deleteTaskRequest={deleteTaskRequest}
-          updateTaskRequest={updateTaskRequest}
-        />
-      ))}
+      {taskItemsList}
     </section>
   );
 };

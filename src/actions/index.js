@@ -17,14 +17,14 @@ export const createTaskError = error => ({
 });
 
 //update task
-export const updateTaskRequest = id => ({
+export const updateTaskRequest = ({ id, taskData }) => ({
   type: ACTION_TYPES.UPDATE_TASK_REQUEST,
-  payload: { id },
+  payload: { id, taskData },
 });
 
-export const updateTaskSuccess = id => ({
+export const updateTaskSuccess = ( taskData ) => ({
   type: ACTION_TYPES.UPDATE_TASK_SUCCESS,
-  payload: { id },
+  payload: {  taskData },
 });
 
 export const updateTaskError = error => ({
@@ -47,7 +47,6 @@ export const getTasksError = error => ({
   type: ACTION_TYPES.GET_TASKS_ERROR,
   payload: { error },
 });
-
 
 //delete task
 export const deleteTaskRequest = id => ({

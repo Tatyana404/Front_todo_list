@@ -19,14 +19,14 @@ export function * createTaskSaga (action) {
 export function * updateTaskSaga (action) {
   try {
     const {
-      payload: { id },
+      payload: { id , taskData},
     } = action;
 
     const {
-      data: { data: taskId },
-    } = yield API.updateTask({ taskId: id });
-
-    yield put(ActionCreators.updateTaskSuccess(taskId));
+      data: { data: task },
+    } = yield API.updateTask({ taskId: id, taskData });
+    console.log(task);
+    yield put(ActionCreators.updateTaskSuccess(task));
   } catch (error) {
     yield put(ActionCreators.updateTaskError(error));
   }
