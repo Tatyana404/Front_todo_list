@@ -27,7 +27,7 @@ export function * updateTaskSaga (action) {
       data: { data: task },
     } = yield API.updateTask({ taskId: id, taskData });
 
-    yield put(ActionCreators.updateTaskSuccess(task));
+    yield put(ActionCreators.updateTaskSuccess({task}));
 
   } catch (error) {
     yield put(ActionCreators.updateTaskError(error));

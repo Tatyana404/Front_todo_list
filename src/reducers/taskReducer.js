@@ -33,14 +33,11 @@ const handlers = {
   }),
 
   [ACTION_TYPES.UPDATE_TASK_SUCCESS]: produce((draftState, action) => {
-    const { tasks } = draftState;
     const {
-
       payload: { task: newTask },
     } = action;
-    const id = draftState.tasks.filter(task => task.id === tasks.id);
-    draftState.tasks[id].push(newTask);
-
+    const id = draftState.tasks.findIndex(task => task.id === newTask.id);
+    draftState.tasks[id] = newTask;
   }),
 
   [ACTION_TYPES.UPDATE_TASK_ERROR]: produce((draftState, action) => {

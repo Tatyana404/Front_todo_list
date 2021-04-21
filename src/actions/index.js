@@ -22,9 +22,9 @@ export const updateTaskRequest = ({ id, taskData }) => ({
   payload: { id, taskData },
 });
 
-export const updateTaskSuccess = ({ taskData }) => ({
+export const updateTaskSuccess = ({ task }) => ({
   type: ACTION_TYPES.UPDATE_TASK_SUCCESS,
-  payload: { taskData },
+  payload: { task },
 
 });
 
