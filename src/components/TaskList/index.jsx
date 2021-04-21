@@ -29,21 +29,17 @@ const TaskList = () => {
     getTasksRequest(search);
   }, []);
 
-
-  const taskItemsList =
-    tasks.map(task => {
-      return (<Task
-        key={task.id}
-        {...task}
-        deleteTaskRequest={deleteTaskRequest}
-        updateTaskRequest={updateTaskRequest}
-      />)
-    })
-
   return (
     <section>
       {error && <Error error={error} clearError={clearTaskError} />}
-      {taskItemsList}
+      {tasks.map(task => (
+        <Task
+          key={task.id}
+          {...task}
+          deleteTaskRequest={deleteTaskRequest}
+          updateTaskRequest={updateTaskRequest}
+        />
+      ))}
     </section>
   );
 };
